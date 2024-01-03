@@ -3,7 +3,7 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Create new chat</title>
+        <title>Edit Chat</title>
         <style>
                 * {
                         margin: 0;
@@ -71,21 +71,21 @@
 </head>
 <body>
         <div id="body">
-                <h2 id="title">Create New Chat</h2>
-        
-                <form action="/chats" method="POST">
+                <h2 id="title">Edit your Chat</h2>
+
+                <form action="/chats/<%= chat._id %>?_method=PUT" method="POST">
                         <label for="from">From</label>
-                        <input type="text" placeholder="From" id="from" name="from">
+                        <input type="text" placeholder="From" id="from" name="from" value="<%= chat.from %>">
         
                         <br><br>
                         
                         <label for="message">Message</label>
-                        <textarea name="msg" id="message" placeholder="Write Message"></textarea>
+                        <textarea name="msg" id="message" placeholder="Write Message">"<%= chat.msg %>"</textarea>
         
                         <br><br>
 
                         <label for="to">To</label>
-                        <input type="text" id="to" placeholder="To" name="to">
+                        <input type="text" id="to" placeholder="To" name="to" value="<%= chat.to %>">
                         <br><br>
                         <button id="newChat">Submit</button>
                 </form>

@@ -3,7 +3,7 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>WhatsApp Chats</title>
         <style>
                 * {
                         margin: 0;
@@ -68,6 +68,25 @@
                         margin-top: 8px;
                         margin-bottom: 8px;
                 }
+                
+                .btn {
+                        background-color: rgb(213, 190, 15);
+                        width: 15%;
+                        margin-left: 40%;
+                        padding: 8px;
+                        border-radius: 10px;
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                }
+
+                #btn:hover {
+                        background-color: rgb(227, 214, 199);
+                }
+
+                #btn:active {
+                        background-color: rgb(231, 193, 151);
+                }
         </style>
 </head>
 <body>
@@ -85,6 +104,12 @@
                                         <p>Message : <%= chat.msg %></p>
                                         <p>To : <%= chat.to %></p>
                                         <p>Date : <%= chat.created_at %></p>
+                                        <form action="/chats/<%= chat._id %>/edit" method="GET">
+                                                <button class="update btn">Update</button>
+                                        </form>
+                                        <form action="/chats/<%= chat._id %>/delete?_method=DELETE" method="post">
+                                                <button class="delete btn">Delete</button>
+                                        </form>
                                 </div>
                         <% } %>
                 </div>

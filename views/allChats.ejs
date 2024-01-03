@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                        color: white;
+                }
+
+                body {
+                        background-color: rgb(178, 227, 227);
+                }
+                
+                .body { 
+                        margin-left: 25%;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        background-color: rgb(104, 199, 41);
+                        display: inline-block;
+                        width: 50%;
+                        border-radius: 16px;
+                        border: solid black 2px;
+                }
+
+                #title {
+                        text-align: center;
+                        padding: 10px;
+                }
+
+                #newChat {
+                        background-color: rgb(213, 190, 15);
+                        width: 80%;
+                        margin-left: 10%;
+                        padding: 8px;
+                        border-radius: 10px;
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                }
+
+                #newChat:hover {
+                        background-color: rgb(227, 214, 199);
+                }
+
+                #newChat:active {
+                        background-color: rgb(231, 193, 151);
+                }
+                
+                #chat {
+                        width: 90%;
+                        margin: auto;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        border: solid black 1px;
+                        border-radius: 8px;
+                        padding: 8px;
+                        background-color: rgb(201, 222, 15);
+                }
+                
+                p{
+                        color: black;
+                        font-family: Arial, Helvetica, sans-serif;
+                        margin-top: 8px;
+                        margin-bottom: 8px;
+                }
+        </style>
+</head>
+<body>
+        <div class="body">
+                <h2 id="title">WhatsApp Chats</h2>
+        
+                <form action="/chats/new" method="GET">
+                        <button id="newChat">Create New Chat</button>
+                </form>
+        
+                <div id="chats">
+                        <% for(let chat of chats) { %>
+                                <div id="chat">
+                                        <p>From : <%= chat.from %></p>
+                                        <p>Message : <%= chat.msg %></p>
+                                        <p>To : <%= chat.to %></p>
+                                        <p>Date : <%= chat.created_at %></p>
+                                </div>
+                        <% } %>
+                </div>
+        </div>
+</body>
+</html>

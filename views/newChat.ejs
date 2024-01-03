@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                }
+
+                body {
+                        background-color: rgb(178, 227, 227)
+                }
+                
+                #body { 
+                        margin-left: 25%;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        background-color: rgb(104, 199, 41);
+                        display: inline-block;
+                        width: 50%;
+                        border-radius: 16px;
+                        border: solid black 2px;
+                }
+
+                #title {
+                        text-align: center;
+                        padding: 10px;
+                }
+
+                #newChat {
+                        background-color: rgb(213, 190, 15);
+                        width: 20%;
+                        margin-left: 40%;
+                        padding: 8px;
+                        border-radius: 10px;
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                }
+
+                #newChat:hover {
+                        background-color: rgb(227, 214, 199);
+                }
+
+                #newChat:active {
+                        background-color: rgb(231, 193, 151);
+                }
+
+                form {
+                        width: 90%;
+                        margin: auto;
+                }
+
+                input {
+                        width: 90%;
+                        margin: 10px;
+                        padding: 8px;
+                }
+
+                textarea {
+                        width: 90%;
+                        margin: 8px;
+                        margin-left: 7%;
+                        padding: 10px;
+                }
+        </style>
+</head>
+<body>
+        <div id="body">
+                <h2 id="title">Create New Chat</h2>
+        
+                <form action="/chats" method="POST">
+                        <label for="from">From</label>
+                        <input type="text" placeholder="From" id="from" name="from">
+        
+                        <br><br>
+                        
+                        <label for="message">Message</label>
+                        <textarea name="msg" id="message" placeholder="Write Message"></textarea>
+        
+                        <br><br>
+
+                        <label for="to">To</label>
+                        <input type="text" id="to" placeholder="To" name="to">
+                        <br><br>
+                        <button id="newChat">Submit</button>
+                </form>
+        </div>
+</body>
+</html>
